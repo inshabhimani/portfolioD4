@@ -1,0 +1,129 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bath & Body</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <!-- Hamburger (mobile only) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- Navigation links (desktop) and side menu (mobile) -->
+    <nav id="main-nav">
+      <a href="#">Home</a>
+      <a href="#">Soaps</a>
+      <a href="#">Body Wash</a>
+      <a href="#">Face Wash</a>
+      <a href="#">Body Scrub</a>
+    </nav>
+    <h2 class="site-title">Bath & Body</h2>
+    <div class="cart-link">
+      <a href="#" onclick="toggleCart()">Cart 🛒<span id="cart-count">0</span></a>
+    </div>
+  </div>
+  <!-- Side menu for mobile -->
+  <nav id="side-menu">
+    <a href="#">Home</a>
+    <a href="#">Soaps</a>
+    <a href="#">Body Wash</a>
+    <a href="#">Face Wash</a>
+    <a href="#">Body Scrub</a>
+  </nav>
+</header>
+
+<script>
+// filepath: c:\Users\91855\OneDrive\Desktop\myshop\index.html
+function toggleMenu() {
+  const menu = document.getElementById('side-menu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+</script>
+
+  <div class="hero">
+    <h1>Natural Beauty Products</h1>
+    <p>Soap, Body Wash, Face Wash, and Scrubs with Ayurvedic Goodness</p>
+  </div>
+
+  <section class="grid" id="products">
+    <!-- Sample product -->
+    <div class="product-card">
+      <img src="./assets/neem.png" alt="Neem Soap">
+      <h3>Neem Soap</h3>
+      <p>₹120</p>
+      <button onclick="addToCart({name: 'Herbal Soap', price: 120})">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./assets/orange_fw.png" alt="Orange Face Wash">
+      <h3>Orange Face Wash</h3>
+      <p>₹150</p>
+      <button onclick="addToCart({name: 'Neem Face Wash', price: 150})">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="./assets/charcoal_fs.png" alt="Charcoal face Scrub">
+      <h3>Charcoal face Scrub</h3>
+      <p>₹250</p>
+      <button onclick="addToCart({name: 'Coffee Body Scrub', price: 250})">Add to Cart</button>
+    </div>
+    <div class="product-card">
+    <img src="./assets/rose_fs.png" alt="Green Tea Scrub">
+    <h3>Rose face Scrub</h3>
+    <p>₹210</p>
+    <button onclick="addToCart({name: 'Green Tea Scrub', price: 210})">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="./assets/lavender_bw.png" alt="Lavender Body Wash">
+    <h3>Lavender Body Wash</h3>
+    <p>₹140</p>
+    <button onclick="addToCart({name: 'Honey & Oats Soap', price: 140})">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="./assets/mint.png" alt="Mint Soap">
+    <h3>Mint Soap</h3>
+    <p>₹190</p>
+    <button onclick="addToCart({name: 'Mint Body Wash', price: 190})">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="./assets/Charcoal_fw.png" alt="Charcoal Face Wash">
+    <h3>Charcoal Face Wash</h3>
+    <p>₹180</p>
+    <button onclick="addToCart({name: 'Charcoal Face Wash', price: 180})">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="./assets/sandalwood_bw.png" alt="Sandalwood Body Wash">
+    <h3>Sandalwood Body Wash</h3>
+    <p>₹220</p>
+    <button onclick="addToCart({name: 'Sandalwood Body Wash', price: 220})">Add to Cart</button>
+  </div>
+  <div class="product-card">
+    <img src="./assets/rose.png" alt="Rose Soap">
+    <h3>Rose Soap</h3>
+    <p>₹130</p>
+    <button onclick="addToCart({name: 'Rose Soap', price: 130})">Add to Cart</button>
+  </div>
+  </section>
+
+  <aside class="cart" id="cart">
+    <h3>Your Cart</h3>
+    <div id="cart-items"></div>
+    <p id="total">Total: ₹0</p>
+    <button onclick="checkout()">Checkout</button>
+    <button onclick="toggleCart()" class="absolute top-2 right-2 text-red-500">✖</button>
+  </aside>
+<button id="theme-toggle" aria-label="Toggle dark mode">
+    <span id="theme-icon">🌙</span>
+  </button>
+  <footer>
+    <p>&copy; 2025 Bath & Body. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
